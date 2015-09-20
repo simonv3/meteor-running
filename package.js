@@ -41,7 +41,7 @@ function getFilesFromFolder(packageName,folder){
 Package.describe({
   name: "simonv3:meteor-running",
   summary: "Get Meteor Up and Running",
-  version: "0.0.1",
+  version: "0.0.2",
   git: "https://github.com/simonv3/meteor-running.git"
 });
 
@@ -49,6 +49,7 @@ Package.on_use(function (api) {
 
   api.use('accounts-password@1.1.1');
   api.use('email@1.0.6', 'server');
+  api.use('mongo@1.1.0', ['client', 'server']);
 
   api.use('angular:angular@1.4.4', 'client');
   api.use('urigo:angular@0.9.3', 'client');
@@ -102,6 +103,7 @@ Package.on_use(function (api) {
   // Files to load in Client only.
   api.add_files(clientFiles, 'client');
   api.add_files(serverFiles, 'server');
+  api.addFiles(['model/site.js', 'model/users.js']);
   // api.add_files(modelFiles);
 
 });
