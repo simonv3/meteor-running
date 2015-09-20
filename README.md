@@ -5,7 +5,7 @@
 # Goals
 
 * [x] Basic authentication
-* [x] Basic model management
+* [ ] Basic model management
 
 # To use
 

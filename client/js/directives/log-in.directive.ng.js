@@ -7,6 +7,6 @@ angular.module('meteor-running').directive('mrLogIn', function () {
     controller: function ($scope) {
       console.log('loaded');
     },
-    templateUrl: 'meteor-running_client/js/directives/log-in.ng.html',
+    templateUrl: 'simonv3_meteor-running_client/js/directives/log-in.ng.html',
   };
 });
