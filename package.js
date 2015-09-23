@@ -1,7 +1,7 @@
 Package.describe({
   name: "simonv3:meteor-running",
   summary: "Add sensible authentication patterns and an admin panel to your app.",
-  version: "0.0.3",
+  version: "0.0.4",
   git: "https://github.com/simonv3/meteor-running.git"
 });
 
