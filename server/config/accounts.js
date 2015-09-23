@@ -1,8 +1,19 @@
+// Hijacking the login attempts on the account to make sure that
+// the right conditions are met.
+// TODO: this might need to be put in the meteor-running-admin package (since
+// that is where setup happens).
+
 Accounts.validateLoginAttempt(function(attemptInfo) {
 
   if (attemptInfo.type == 'resume') return true;
 
   if (attemptInfo.methodName == 'createUser' && !attemptInfo.error) {
+    var numOfAdmin = Meteor.users.find({
+      'is_admin': true
+    }).count();
+    if (attemptInfo.methodArguments[0].is_admin && numOfAdmin === 0) {
+      return true;
+    }
     throw new Meteor.Error('account-created', 'Verification e-mail sent.');
   }
 
