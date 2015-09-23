@@ -15,8 +15,8 @@ Package.on_use(function (api) {
   api.use('angular:angular@1.4.4', 'client');
   api.use('urigo:angular@0.9.3', 'client');
 
-  api.use('simonv3:meteor-running-models@0.0.1', ['client', 'server']);
-  api.use('simonv3:meteor-running-admin@0.0.1', 'client');
+  api.use('simonv3:meteor-running-models@0.0.2', ['client', 'server']);
+  api.use('simonv3:meteor-running-admin@0.0.2', 'client');
 
   api.addFiles('meteor-running.js', 'client');
 
