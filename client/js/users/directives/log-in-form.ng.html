@@ -1,4 +1,4 @@
-<form class="auth-form" name="loginForm">
+<form class="mr-auth-form" name="loginForm">
   <!-- <div>
     <h2>Login with:</h2>
     <button>Twitter</button>
@@ -14,15 +14,17 @@
   <input type="text"
     ng-model="credentials.email"
     placeholder="email"
-    aria-label="email"/>
+    aria-label="email"
+    required/>
   <input type="password"
     ng-model="credentials.password"
     placeholder="password"
-    aria-label="password"/>
+    aria-label="password"
+    required/>
   <button ng-disabled="!loginForm.$valid"
     ng-click="login()">Submit</button>
 </form>
-<div>
-  <a href="/reset-password">Forgot password?</a>
-  <a href="/register">Create an account</a>
+<div class="mr-auth-extras">
+  <div><a href="/reset-password">Forgot your password?</a></div>
+  <div><a href="/register">Create an account.</a></div>
 </div>

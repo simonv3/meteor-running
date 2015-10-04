@@ -1,7 +1,7 @@
 Package.describe({
   name: "simonv3:meteor-running",
   summary: "Add sensible authentication patterns and an admin panel to your app.",
-  version: "0.2.0",
+  version: "0.2.2",
   git: "https://github.com/simonv3/meteor-running.git"
 });
 
@@ -12,11 +12,10 @@ Package.on_use(function (api) {
   api.use('email@1.0.6', 'server');
   api.use('mongo@1.1.0', ['client', 'server']);
 
-  api.use('angular:angular@1.4.4', 'client');
-  api.use('urigo:angular@0.9.3', 'client');
+  api.use('angular@1.0.1', 'client');
 
   api.use('simonv3:meteor-running-models@0.0.2', ['client', 'server']);
-  api.use('simonv3:meteor-running-admin@0.2.0', 'client');
+  api.use('simonv3:meteor-running-admin@0.2.2', 'client');
 
   api.addFiles('meteor-running.js', 'client');
 
@@ -24,8 +23,6 @@ Package.on_use(function (api) {
     'client/config/accounts.js',
     'client/js/directives/account-buttons.directive.ng.js',
     'client/js/directives/account-buttons.ng.html',
-    'client/js/directives/log-in.directive.ng.js',
-    'client/js/directives/log-in.ng.html',
     'client/js/filters/displayName.js',
     'client/js/lib/routes.js',
     'client/js/navbar/navBarCtrl.ng.js',
@@ -36,6 +33,8 @@ Package.on_use(function (api) {
     'client/js/users/controllers/resetPasswordCtrl.ng.js',
     'client/js/users/directives/log-in-form.ng.html',
     'client/js/users/directives/log-in-form.directive.ng.js',
+    'client/js/users/directives/reset-password-form.ng.html',
+    'client/js/users/directives/reset-password-form.directive.ng.js',
     'client/js/users/directives/register-form.ng.html',
     'client/js/users/directives/register-form.directive.ng.js',
     'client/js/users/views/login.ng.html',
