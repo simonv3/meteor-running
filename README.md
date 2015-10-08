@@ -40,6 +40,21 @@ If you don't want a state named index, you can set this up to just redirect to w
   });
 ```
 
+## Overwriting an auth state
+
+If you want to overwrite one of the auth states, when you run your app do:
+
+```
+angular.module('yourappname')
+  .run(function($state) {
+    var state = $state.get('register')
+    if (state) {
+      state.controller = 'CustomRegisterCtrl';
+      state.templateUrl = 'path/to/custom/register/template.ng.hml';
+    }
+  });
+```
+
 # Contributing
 
 What's needed:
