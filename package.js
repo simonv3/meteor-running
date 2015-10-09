@@ -1,7 +1,7 @@
 Package.describe({
   name: "simonv3:meteor-running",
   summary: "Add sensible authentication patterns and an admin panel to your app.",
-  version: "0.3.0",
+  version: "0.3.1",
   git: "https://github.com/simonv3/meteor-running.git"
 });
 
@@ -21,7 +21,6 @@ Package.onUse(function (api) {
   api.addFiles('meteor-running.js', 'client');
 
   var clientFiles = [
-    'client/config/accounts.js',
     'client/js/directives/account-buttons.directive.ng.js',
     'client/js/directives/account-buttons.ng.html',
     'client/js/filters/displayName.js',
