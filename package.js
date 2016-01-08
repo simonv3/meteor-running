@@ -12,7 +12,7 @@ Package.on_use(function (api) {
   api.use('email@1.0.6', 'server');
   api.use('mongo@1.1.0', ['client', 'server']);
 
-  api.use('angular@1.0.1', 'client');
+  api.use('angular@1.3.2', 'client');
 
   api.use('simonv3:meteor-running-models@0.0.2', ['client', 'server']);
   api.use('simonv3:meteor-running-admin@0.2.3', 'client');
@@ -21,8 +21,8 @@ Package.on_use(function (api) {
 
   var clientFiles = [
     'client/config/accounts.js',
-    'client/js/directives/account-buttons.directive.ng.js',
-    'client/js/directives/account-buttons.ng.html',
+    'client/js/directives/account-buttons.directive.js',
+    'client/js/directives/account-buttons.html',
     'client/js/filters/displayName.js',
     'client/js/lib/routes.js',
     'client/js/navbar/navBarCtrl.ng.js',
