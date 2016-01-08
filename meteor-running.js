@@ -2,5 +2,6 @@
 var meteorRunning = angular.module('meteor-running', [
   'angular-meteor',
   'ui.router',
+  'meteor-running-auth',
   'meteor-running-admin'
   ]);

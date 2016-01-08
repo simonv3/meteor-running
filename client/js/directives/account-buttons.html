@@ -1,16 +1,16 @@
 <div class="registration"
   ng-if="state.current.name !== 'setup'">
   <a class="button"
-    ng-href="/login"
+    ng-href="/auth/login"
     ng-hide="$root.currentUser">Log in</a>
   <a class="button"
-    ng-href="/register"
+    ng-href="/auth/register"
     ng-show="!$root.currentUser && activeSurvey.require_sign_in">Register</a>
   <div class="username"
     ng-show="$root.currentUser">
     Hello <span ng-bind="$root.currentUser | displayName"></span>
   </div>
   <a class="button"
-    ng-href="/logout"
+    ng-href="/auth/logout"
     ng-show="$root.currentUser">Log out</a>
 </div>
