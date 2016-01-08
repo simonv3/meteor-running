@@ -6,6 +6,6 @@ angular.module('meteor-running')
       link: function ($scope) {
         $scope.state = $state;
       },
-      templateUrl: 'simonv3_meteor-running_client/js/directives/account-buttons.html',
+      templateUrl: '/packages/simonv3:meteor-running/client/js/directives/account-buttons.html',
     };
   });
