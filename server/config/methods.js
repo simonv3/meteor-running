@@ -1,23 +1,39 @@
 // In your server code: define a method that the client can call
-Meteor.methods({
-  sendEmail: function (to, from, subject, text) {
-    if (Meteor.user() && Meteor.user().is_admin) {
-      check([to, from, subject, text], [String]);
 
-      // Let other method calls from the same client start running,
-      // without waiting for the email sending to complete.
-      this.unblock();
+Meteor.startup(function() {
+  Meteor.methods({
+    isSetUp: function() {
+      var sites = Sites.find({has_been_set_up: true}).fetch()
+      if (sites.length > 0)
+        return true;
+      Meteor.call('isAdmin', function(err, resp) {
+        if (resp) {
+          Sites.update({has_been_set_up: false}, {$set: {has_been_set_up: true}})
+          return true;
+        }
+        return false;
+      })
 
-      Email.send({
-        to: to,
-        from: from,
-        subject: subject,
-        text: text
-      });
+    },
+    isSandstorm: function() {
+      var user = Meteor.users.find({'services.sandstorm': {$exists: true, $ne: null}}).fetch()[0]
+      if (user.services.sandstorm)
+        return true;
+      return false;
+    },
+    isSiteSetUp: function() {
+      var users = Meteor.users.find({is_admin: true}).fetch()
+      if (users.length === 0) {
+        return false
+      } else {
+        var sites = Sites.find({has_been_set_up: true}).fetch()
+
+        if (sites.length === 0) {
+          return false;
+        }
+      }
+      return true;
     }
-  },
-  resendVerificationEmail: function(email) {
-    var relevantUser = Meteor.users.findOne({ "emails.address" : email });
-    Accounts.sendVerificationEmail(relevantUser._id, email);
-  }
-});
+  });
+
+})

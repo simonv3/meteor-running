@@ -1,7 +1,7 @@
 Package.describe({
   name: "simonv3:meteor-running",
   summary: "Add sensible authentication patterns and an admin panel to your app.",
-  version: "0.3.3",
+  version: "0.4.0",
   git: "https://github.com/simonv3/meteor-running.git"
 });
 
@@ -31,6 +31,15 @@ Package.onUse(function (api) {
   ];
 
   api.addFiles(clientFiles, 'client');
+
+  var serverFiles = [
+    'server/config/accounts.js',
+    'server/config/methods.js',
+    'server/startup/initialDataLoad.js',
+    'server/startup/setupSite.js'
+  ];
+
+  api.addFiles(serverFiles, 'server');
 
   api.export('Groups', ['client','server']);
   api.export('Sites', ['client','server']);

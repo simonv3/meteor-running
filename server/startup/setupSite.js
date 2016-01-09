@@ -1,7 +1,7 @@
 Meteor.startup(function () {
 
-  Accounts.config({
-    'sendVerificationEmail': true,
-  });
+  // Accounts.config({
+  //   'sendVerificationEmail': true,
+  // });
 
 });
