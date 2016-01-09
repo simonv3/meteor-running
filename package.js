@@ -15,8 +15,8 @@ Package.onUse(function (api) {
   api.use('angular@1.3.2', 'client');
 
   api.use('simonv3:meteor-running-models@0.0.2', ['client', 'server']);
-  api.use('simonv3:meteor-running-auth@0.3.0', ['client', 'server']);
-  api.use('simonv3:meteor-running-admin@0.2.3', 'client');
+  api.use('simonv3:meteor-running-auth@0.3.2', ['client', 'server']);
+  api.use('simonv3:meteor-running-admin@0.2.4', 'client');
 
   api.addFiles('meteor-running.js', 'client');
 
