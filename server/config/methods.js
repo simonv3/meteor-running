@@ -15,12 +15,14 @@ Meteor.startup(function() {
       })
 
     },
+
     isSandstorm: function() {
       var user = Meteor.users.find({'services.sandstorm': {$exists: true, $ne: null}}).fetch()[0]
       if (user.services.sandstorm)
         return true;
       return false;
     },
+
     isSiteSetUp: function() {
       var users = Meteor.users.find({is_admin: true}).fetch()
       if (users.length === 0) {
